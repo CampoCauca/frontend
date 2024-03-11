@@ -1,0 +1,88 @@
+<mat-toolbar class="bg-dark text-white"> <!-- barra de color negro -->
+    <nav class="navbar navbar-expand-lg bg-dark text-white"> <!--texto en blanco-->
+  
+      <div class="collapse navbar-collapse" id="navbarSupportedContent"> <!--definirá la zona que se va atrabajr.-->
+        <ul class="navbar-nav me-auto mb-auto"><!--mantener la alineacion-->
+          <img src="assets\icon.png"  width="45" height="45">&nbsp; <!--logo-->
+          <a  class="nav-link text-white" mat-button style="margin-right: 10px" [routerLink]="'/'"> <!--espacio de la margena la derecha-->
+            Campo Cauca
+          </a>
+  
+          <a class="nav-link text-white" mat-button style="margin-right: 10px" href="#">Inicio</a>
+          <a class="nav-link text-white" mat-button style="margin-right: 10px" href="/nosotros">Nosotros</a>
+  
+          <!--ingresa usuario-->
+  
+          <li class="nav-item dropdown" *ngIf="isLoggedIn"> <!--mostrar, o no, un elemento HTML de acuerdo con una condición.-->
+            <a class="nav-link dropdown-toggle text-white" mat-button style="margin-right: 10px" href="#" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Registrar
+            </a> 
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown"> <!--ul define una lista ordenada. El elemento contiene uno o más elementos li que especifican los ítems de la lista.-->
+              <li><a class="dropdown-item" href="/auth">Facturas pacientes</a></li>
+              <li><a class="dropdown-item" href="/auth">Informacion medicos</a></li>
+              <li><a class="dropdown-item" *ngIf="isLoggedIn && banderaResgistrar" href="/signupmedico">Registrar medicos</a></li>
+              <li><a class="dropdown-item" *ngIf="isLoggedIn && banderaResgistrar" href="/signup">Registrar pacientes</a></li>
+              <li><a class="dropdown-item" *ngIf="isLoggedIn && banderaResgistrar" href="/registrar">Registrar Historia Clinica</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown" *ngIf="isLoggedIn">
+            <a class="nav-link dropdown-toggle text-white" mat-button style="margin-right: 10px" href="#" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Servicios
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="/busqueda">Ver medicamentos</a></li>
+              <li><a class="dropdown-item" href="/busqueda">Ver diagnosticos</a></li>
+              <li><a class="dropdown-item" href="/busqueda">Ver procedimientos</a></li>
+              <li><a class="dropdown-item" href="/busqueda">Ver consultas realizadas</a></li>
+              <li><a class="dropdown-item" href="/cita">Agenda tu cita</a></li>
+              <li><a class="dropdown-item" *ngIf="isLoggedIn" href="/busqueda">Ver historia clinica</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown " *ngIf="isLoggedIn" >
+            <a class="nav-link dropdown-toggle text-white"  mat-button style="margin-right: 10px" href="#" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Consultas
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="/busqueda">Ver consultas realizadas</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      </nav>
+    <span class="example-spacer"></span>
+    <a *ngIf="!isLoggedIn" [routerLink]="'/login'" mat-icon-button class="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon">
+      <i class='fas fa-fingerprint'></i>
+      Iniciar sesión</a>
+      
+    <!-- <button *ngIf="!isLoggedIn" [routerLink]="'/signup'" mat-button class="example-icon favorite-icon mr20 ml70"
+      aria-label="Example icon-button with heart icon">
+       Registrar
+    </button> -->
+    <li class="nav-item dropdown " *ngIf="!isLoggedIn" mat-button class="example-icon favorite-icon mr20 ml70">
+      <a class="nav-link dropdown-toggle text-white"  mat-button style="margin-right: 10px" href="#" id="navbarDropdown" role="button"
+        data-bs-toggle="dropdown" aria-expanded="false">
+        Registrar
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <li><a class="dropdown-item" href="/registarC">Comprador</a></li>
+        <li><a class="dropdown-item" href="/registarV">Vendedor</a></li>
+      </ul>
+    </li>
+
+  
+    <button *ngIf="isLoggedIn" (click)="logout()" mat-button class="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon">
+       Cerrar sesión
+    </button>
+  
+    <!-- nombre y apellido cuando se incia sesion -->
+    
+    <button *ngIf="isLoggedIn && user" mat-button class="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon">
+      <span>{{ user.nombre }} {{ user.apellido }}</span>
+    </button>
+  </mat-toolbar>

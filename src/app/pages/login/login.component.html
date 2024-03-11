@@ -1,0 +1,38 @@
+<!--INICIO DE SESION-->
+<!-- 
+<app-navbar></app-navbar> -->
+<div class = "bootstrap-wrapper"> <!--ADAPTA LA PANTALLA-->
+  <div class = "container">
+    <div class = "row mt60">
+      <div class = "col-md-6 offset-md-3">
+        <mat-card>
+          <div class = "text-center">
+            <img src="../../../assets/login.png" width = "100" height = "100">
+          </div>
+
+          <h1 class = "text-center">Inicio de sesión</h1>
+          <form (ngSubmit) = "formSubmit()">
+            <mat-form-field class = "full-width"  appearance = "outline">
+              <mat-label>Nombre de usuario</mat-label>
+              <input [required]="true" [(ngModel)] = "loginData.username" name = "username"   matInput placeholder="Digite su nombre de usuario"> <!--NGMODEL es una directiva de Angular que se utiliza para enlazar datos bidireccionalmente entre un elemento de formulario y una propiedad de un componente de Angular.-->
+              <mat-hint>El nombre de usuario debe ser valido</mat-hint> <!--SUGERENCIA DE TEXTO-->
+            </mat-form-field>
+            <mat-form-field class="full-width"  appearance = "outline">
+              <mat-label>Contraseña</mat-label>
+              <input [required]="true" [(ngModel)] = "loginData.password" name = "password" type="password" matInput placeholder="Digite su contraseña">
+              <mat-hint>La contraseña debe ser valida</mat-hint>
+            </mat-form-field>
+
+            <br><br>
+
+            <div class = "container text-center">
+              <button type = "submit" class="btn btn-success" mdbRipple>Iniciar sesión</button>
+              <button class="btn btn-light ovalado" type="reset" style = "margin-left: 20px;" mdbRipple>Limpiar</button>
+            </div>
+          </form>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
+

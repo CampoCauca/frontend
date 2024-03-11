@@ -1,0 +1,4 @@
+.example-spacer{ /* se mantenga el espacio entre informacion de la pagina y el inicio de sesion */
+    flex: 1 1 auto;
+  }
+  
