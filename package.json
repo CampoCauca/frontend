@@ -19,15 +19,15 @@
     "@angular/platform-browser": "^14.0.0",
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
-    "@fortawesome/angular-fontawesome": "^0.14.1",
+    "@sweetalert2/ngx-sweetalert2": "^12.3.0",
     "rxjs": "~7.5.0",
-    "sweetalert2": "^6.11.5",
+    "sweetalert2": "^11.10.6",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^14.0.6",
-    "@angular/cli": "~14.0.6",
+    "@angular/cli": "^14.2.13",
     "@angular/compiler-cli": "^14.0.0",
     "@types/jasmine": "~4.0.0",
     "jasmine-core": "~4.1.0",
