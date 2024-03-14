@@ -26,6 +26,8 @@ import { InicioComponent } from './pages/inicio/inicio.component';
 import { LoginComponent } from './pages/login/login.component';
 import { CompradorComponent } from './pages/registrar/comprador/comprador.component';
 import { VendedorComponent } from './pages/registrar/vendedor/vendedor.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+
 
 @NgModule({
   declarations: [
@@ -56,7 +58,8 @@ import { VendedorComponent } from './pages/registrar/vendedor/vendedor.component
     MatNativeDateModule,
     MatDatepickerModule,
     MatListModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

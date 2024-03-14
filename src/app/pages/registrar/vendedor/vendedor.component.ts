@@ -12,14 +12,24 @@ import Swal from 'sweetalert2';
 export class VendedorComponent implements OnInit {
   
   public user = {
-    username: '',
-    password: '',
-    nombre: '',
-    apellido: '',
-    email: '',
+    primer_nombre: '',
+    segundo_nombre: '',
+    primer_apellido: '',
+    segundo_apellido: '',
     telefono: '',
-    identificacion: ''
+    direccion: '',
+    correo: '',
+    codigo_municipio:''
   }
+
+  public listamunicipios: any[] = [
+    { codigo: '05001', nombre: 'Medellín' },
+    { codigo: '11001', nombre: 'Bogotá' },
+    { codigo: '13001', nombre: 'Cartagena' },
+    { codigo: '68001', nombre: 'Barranquilla' },
+    { codigo: '76001', nombre: 'Cali' },
+    // Puedes agregar más municipios aquí según tus necesidades
+  ];
 
 
   constructor(private snack: MatSnackBar,
@@ -31,40 +41,32 @@ export class VendedorComponent implements OnInit {
 
   formSubmit() {
     // console.log(this.user);
-    if (this.user.username == '' || this.user.username == null) {
-      this.snack.open('El nombre de usuario es requerido !!', 'Aceptar', {
+    if (this.user.primer_nombre == '' || this.user.primer_nombre == null) {
+      this.snack.open('Este campo es requerido !!', 'Aceptar', {
         duration: 3000,
         verticalPosition: 'top',
         horizontalPosition: 'right'
       });
       return;
     }
-    if (this.user.password == '' || this.user.password == null) {
-      this.snack.open('La contraseña es requerida !!', 'Aceptar', {
+    if (this.user.segundo_nombre == '' || this.user.segundo_nombre == null) {
+      this.snack.open('Este campo es requerido !!', 'Aceptar', {
         duration: 3000,
         verticalPosition: 'top',
         horizontalPosition: 'right'
       });
       return;
     }
-    if (this.user.nombre == '' || this.user.nombre == null) {
-      this.snack.open('El nombre es requerido !!', 'Aceptar', {
+    if (this.user.primer_apellido == '' || this.user.primer_apellido == null) {
+      this.snack.open('Este campo es requerido !!', 'Aceptar', {
         duration: 3000,
         verticalPosition: 'top',
         horizontalPosition: 'right'
       });
       return;
     }
-    if (this.user.apellido == '' || this.user.apellido == null) {
-      this.snack.open('El apellido es requerido !!', 'Aceptar', {
-        duration: 3000,
-        verticalPosition: 'top',
-        horizontalPosition: 'right'
-      });
-      return;
-    }
-    if (this.user.email == '' || this.user.email == null) {
-      this.snack.open('El email es requerido !!', 'Aceptar', {
+    if (this.user.segundo_apellido == '' || this.user.segundo_apellido == null) {
+      this.snack.open('Este campo es requerido !!', 'Aceptar', {
         duration: 3000,
         verticalPosition: 'top',
         horizontalPosition: 'right'
@@ -72,28 +74,37 @@ export class VendedorComponent implements OnInit {
       return;
     }
     if (this.user.telefono == '' || this.user.telefono == null) {
-      this.snack.open('El telefono es requerido !!', 'Aceptar', {
+      this.snack.open('Este campo es requerido !!', 'Aceptar', {
         duration: 3000,
         verticalPosition: 'top',
         horizontalPosition: 'right'
       });
       return;
     }
-    if (this.user.identificacion == '' || this.user.identificacion == null) {
-      this.snack.open('La identificacion es requerida !!', 'Aceptar', {
+    if (this.user.direccion == '' || this.user.direccion == null) {
+      this.snack.open('Este campo es requerido !!', 'Aceptar', {
         duration: 3000,
         verticalPosition: 'top',
         horizontalPosition: 'right'
       });
       return;
     }
+    if (this.user.correo == '' || this.user.correo == null) {
+      this.snack.open('Este campo es requerido !!', 'Aceptar', {
+        duration: 3000,
+        verticalPosition: 'top',
+        horizontalPosition: 'right'
+      });
+      return;
+    }
+
 
     //Conexion Backend
 
   }
 
   exit() {
-    if (this.user.username == null||this.user.username != null) {
+    if (this.user.primer_nombre == null||this.user.primer_nombre != null) {
       Swal.fire({
         title: '¿Está seguro?',
         text: "¡Si no le diste en Registrar tu usuario no se creara!",

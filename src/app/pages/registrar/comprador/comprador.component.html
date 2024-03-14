@@ -12,45 +12,46 @@
               <button type="button" (click)="exit()" class="btn btn-secondary ovalado">
                   <i class="fa fa-times"></i></button>
             </div>
-            <img src="../../../assets/icon.png" alt="registro de usuario" width = "100" height = "100">
+            <img src="../../../assets/comprador.png" alt="registro de usuario" width = "100" height = "100">
           </div>
           
-          <h1 class="text-center">Registrate aqui</h1>
+          <h2 class="text-center">COMPRADOR</h2>
+          <h3 class="text-center">Registrate aquí</h3>
           <form (ngSubmit) = "formSubmit()">
             <mat-form-field class="full-width"  appearance = "outline">
-              <mat-label>Usuario</mat-label>
-              <input [required]="true" [(ngModel)] = "user.username" name = "username" matInput placeholder="Digite su usuario">
-              <mat-hint>El usuario debe ser único</mat-hint>
+              <mat-label>Primer Nombre</mat-label>
+              <input [required]="true" [(ngModel)] = "user.primer_nombre" name = "primer_nombre" matInput placeholder="Ingrese su primer nombre">
+              <!-- <mat-hint>El usuario debe ser único</mat-hint> -->
             </mat-form-field>
   
             <mat-form-field class="full-width"  appearance = "outline">
-              <mat-label>Contraseña</mat-label>
-              <input [required]="true" [(ngModel)] = "user.password" name = "password" type = "password" matInput placeholder="Digite su contraseña">
+              <mat-label>Segundo Nombre</mat-label>
+              <input [required]="true" [(ngModel)] = "user.segundo_nombre" name = "segundo_nombre" matInput placeholder="Ingrese su segundo nombre">
             </mat-form-field>
   
             <mat-form-field class="full-width"  appearance = "outline">
-              <mat-label>Nombre</mat-label>
-              <input [required]="true" [(ngModel)] = "user.nombre" name = "nombre" matInput placeholder="Digite su nombre">
+              <mat-label>Primer Apellido</mat-label>
+              <input [required]="true" [(ngModel)] = "user.primer_apellido" name = "primer_apellido" matInput placeholder="Ingrese su primer apellido">
             </mat-form-field>
   
             <mat-form-field class="full-width"  appearance = "outline">
-              <mat-label>Apellido</mat-label>
-              <input [required]="true" [(ngModel)] = "user.apellido" name = "apellido" matInput placeholder="Digite su apellido">
+              <mat-label>Segundo Apellido</mat-label>
+              <input [required]="true" [(ngModel)] = "user.segundo_apellido" name = "segundo_apellido" matInput placeholder="Ingrese su segundo apellido">
             </mat-form-field>
   
             <mat-form-field class="full-width"  appearance = "outline">
-              <mat-label>Identificacion</mat-label>
-              <input [required]="true" [(ngModel)] = "user.identificacion" name = "identificacion" matInput placeholder="Digite su identificacion">
+              <mat-label>Teléfono</mat-label>
+              <input [required]="true" [(ngModel)] = "user.telefono" name = "telefono" matInput placeholder="Ingrese su número telefonico">
             </mat-form-field>
             
             <mat-form-field class="full-width"  appearance = "outline">
-              <mat-label>Email</mat-label>
-              <input [required]="true" [(ngModel)] = "user.email" name = "email" type="email" matInput placeholder="Digite su email">
+              <mat-label>Dirección</mat-label>
+              <input [required]="true" [(ngModel)] = "user.direccion" name = "direccion" matInput placeholder="Ingrese su dirección">
             </mat-form-field>
   
             <mat-form-field class="full-width"  appearance = "outline">
-              <mat-label>Telefono</mat-label>
-              <input [required]="true" [(ngModel)] = "user.telefono" name = "telefono" matInput placeholder="Digite su telefono">
+              <mat-label>Correo Electronico</mat-label>
+              <input [required]="true" [(ngModel)] = "user.correo" name = "correo" type="email" matInput placeholder="Ingrese el email">
             </mat-form-field>
             
   
