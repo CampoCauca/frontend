@@ -26,6 +26,10 @@ import { InicioComponent } from './pages/inicio/inicio.component';
 import { LoginComponent } from './pages/login/login.component';
 import { CompradorComponent } from './pages/registrar/comprador/comprador.component';
 import { VendedorComponent } from './pages/registrar/vendedor/vendedor.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { paginacion } from './pages/inicio/paginacion.pipe';
+import { MatTooltipModule } from '@angular/material/tooltip';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +39,8 @@ import { VendedorComponent } from './pages/registrar/vendedor/vendedor.component
     InicioComponent,
     LoginComponent,
     CompradorComponent,
-    VendedorComponent
+    VendedorComponent,
+    paginacion
   ],
   imports: [
     BrowserModule,
@@ -56,7 +61,9 @@ import { VendedorComponent } from './pages/registrar/vendedor/vendedor.component
     MatNativeDateModule,
     MatDatepickerModule,
     MatListModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatPaginatorModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
