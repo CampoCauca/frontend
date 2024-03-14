@@ -19,53 +19,58 @@
         <h3 class="text-center">Registrate aquí</h3>
         <!-- <h4 class="text-center">vende tus producto</h4> -->
         <form (ngSubmit) = "formSubmit()">
+          <div class="row">
+            <div class="col-md-6">
 
-          <mat-grid-list cols="2" rowHeight="2:1">
-            <mat-grid-tile><mat-form-field class="full-width"  appearance = "outline">
-              <mat-label>Primer Nombre</mat-label>
-              <input [required]="true" [(ngModel)] = "user.primer_nombre" name = "primer_nombre" matInput placeholder="Ingrese su primer nombre">
-              <!-- <mat-hint>El usuario debe ser único</mat-hint> -->
-            </mat-form-field>
+              <mat-form-field class="full-width"  appearance = "outline">
+                <mat-label>Primer Nombre</mat-label>
+                <input [required]="true" [(ngModel)] = "user.primer_nombre" name = "primer_nombre" matInput placeholder="Ingrese su primer nombre">
+                <!-- <mat-hint>El usuario debe ser único</mat-hint> -->
+              </mat-form-field>
 
-            <mat-form-field class="full-width"  appearance = "outline">
-              <mat-label>Segundo Nombre</mat-label>
-              <input [required]="true" [(ngModel)] = "user.segundo_nombre" name = "segundo_nombre" matInput placeholder="Ingrese su segundo nombre">
-            </mat-form-field>
+              <mat-form-field class="full-width"  appearance = "outline">
+                <mat-label>Segundo Nombre</mat-label>
+                <input [required]="true" [(ngModel)] = "user.segundo_nombre" name = "segundo_nombre" matInput placeholder="Ingrese su segundo nombre">
+              </mat-form-field>
 
-            <mat-form-field class="full-width"  appearance = "outline">
-              <mat-label>Primer Apellido</mat-label>
-              <input [required]="true" [(ngModel)] = "user.primer_apellido" name = "primer_apellido" matInput placeholder="Ingrese su primer apellido">
-            </mat-form-field>
+              <mat-form-field class="full-width"  appearance = "outline">
+                <mat-label>Primer Apellido</mat-label>
+                <input [required]="true" [(ngModel)] = "user.primer_apellido" name = "primer_apellido" matInput placeholder="Ingrese su primer apellido">
+              </mat-form-field>
 
-            <mat-form-field class="full-width"  appearance = "outline">
-              <mat-label>Segundo Apellido</mat-label>
-              <input [required]="true" [(ngModel)] = "user.segundo_apellido" name = "segundo_apellido" matInput placeholder="Ingrese su segundo apellido">
-            </mat-form-field></mat-grid-tile>
+              <mat-form-field class="full-width"  appearance = "outline">
+                <mat-label>Segundo Apellido</mat-label>
+                <input [required]="true" [(ngModel)] = "user.segundo_apellido" name = "segundo_apellido" matInput placeholder="Ingrese su segundo apellido">
+              </mat-form-field>
+            </div>
 
-            <mat-grid-tile><mat-form-field class="full-width"  appearance = "outline">
-              <mat-label>Teléfono</mat-label>
-              <input [required]="true" [(ngModel)] = "user.telefono" name = "telefono" matInput placeholder="Ingrese su número telefonico">
-            </mat-form-field>
-            
-            <mat-form-field class="full-width"  appearance = "outline">
-              <mat-label>Dirección</mat-label>
-              <input [required]="true" [(ngModel)] = "user.direccion" name = "direccion" matInput placeholder="Ingrese su dirección">
-            </mat-form-field>
+            <div class="col-md-6">
 
             <mat-form-field class="full-width"  appearance = "outline">
-              <mat-label>Correo Electronico</mat-label>
-              <input [required]="true" [(ngModel)] = "user.correo" name = "correo" type="email" matInput placeholder="Ingrese el email">
-            </mat-form-field>
-            
-            <mat-form-field class="full-width" appearance="outline">
-              <mat-select placeholder="Municipios" [(ngModel)]="user.codigo_municipio" matInput name="municipio">
-                <mat-option *ngFor="let municipio of listamunicipios" [value]="municipio.codigo">
-                  {{municipio.nombre}}
-                </mat-option>
-              </mat-select>
-            </mat-form-field></mat-grid-tile>
-            
-          </mat-grid-list>
+                <mat-label>Teléfono</mat-label>
+                <input [required]="true" [(ngModel)] = "user.telefono" name = "telefono" matInput placeholder="Ingrese su número telefonico">
+              </mat-form-field>
+              
+              <mat-form-field class="full-width"  appearance = "outline">
+                <mat-label>Dirección</mat-label>
+                <input [required]="true" [(ngModel)] = "user.direccion" name = "direccion" matInput placeholder="Ingrese su dirección">
+              </mat-form-field>
+
+              <mat-form-field class="full-width"  appearance = "outline">
+                <mat-label>Correo Electronico</mat-label>
+                <input [required]="true" [(ngModel)] = "user.correo" name = "correo" type="email" matInput placeholder="Ingrese el email">
+              </mat-form-field>
+              
+              <mat-form-field class="full-width" appearance="outline">
+                <mat-select placeholder="Municipios" [(ngModel)]="user.codigo_municipio" matInput name="municipio">
+                  <mat-option *ngFor="let municipio of listamunicipios" [value]="municipio.codigo">
+                    {{municipio.nombre}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>  
+         
             
             
 
