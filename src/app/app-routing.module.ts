@@ -4,6 +4,8 @@ import { InicioComponent } from './pages/inicio/inicio.component';
 import { LoginComponent } from './pages/login/login.component';
 import { VendedorComponent } from './pages/registrar/vendedor/vendedor.component';
 import { CompradorComponent } from './pages/registrar/comprador/comprador.component';
+import { UsuarioComponent } from './pages/administrador/usuario/usuario.component';
+import { ListarUsuarioComponent } from './pages/administrador/listar-usuario/listar-usuario.component';
 
 const routes: Routes = [
  { path : '',
@@ -29,7 +31,15 @@ const routes: Routes = [
     path : 'login',
     component : LoginComponent,
     pathMatch : 'full'
-  }
+  },
+  { path : 'usuario',
+    component : UsuarioComponent,
+    pathMatch : 'full'
+  },
+  { path : 'listarUsuario',
+    component : ListarUsuarioComponent,
+    pathMatch : 'full'
+  },
 ];
 
 @NgModule({

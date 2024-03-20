@@ -27,6 +27,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { CompradorComponent } from './pages/registrar/comprador/comprador.component';
 import { VendedorComponent } from './pages/registrar/vendedor/vendedor.component';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { UsuarioComponent } from './pages/administrador/usuario/usuario.component';
+import { ListarUsuarioComponent } from './pages/administrador/listar-usuario/listar-usuario.component';
 
 
 @NgModule({
@@ -37,7 +39,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
     InicioComponent,
     LoginComponent,
     CompradorComponent,
-    VendedorComponent
+    VendedorComponent,
+    UsuarioComponent,
+    ListarUsuarioComponent
   ],
   imports: [
     BrowserModule,
